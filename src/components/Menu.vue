@@ -81,6 +81,7 @@ export default {
   }
 }
 #side-menu {
+  user-select: none;
   min-height: 100vh;
   background: white;
   padding: 1.5rem 0;
