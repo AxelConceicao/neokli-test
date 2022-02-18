@@ -1,0 +1,86 @@
+html,
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+body,
+input,
+button {
+  font-family: Rubik, sans-serif, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #fff;
+}
+
+:root {
+  --color-white: #fff;
+  --color-primary: #409eff;
+  --color-success: #67c23a;
+  --color-warning: #e6a23c;
+  --color-danger: #f56c6c;
+  --color-info: #909399;
+
+  --color-text-primary: #333333;
+  --color-text-regular: #666666;
+  --color-text-secondary: #888888;
+  --color-text-placeholder: #bbbbbb;
+
+  --color-primary-rgb: 31, 95, 153;
+}
+
+ion-icon {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.el-button--small {
+  height: 32px;
+  padding: 0rem 0.75rem;
+}
+
+.modal {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto !important;
+  border-radius: 4px;
+  .el-dialog__body {
+    padding: 20px;
+  }
+}
+
+.link-effect,
+a {
+  color: var(--color-text-regular);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+
+  &:focus {
+    color: inherit;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: var(--color-primary);
+  }
+}
+
+.hide-arrows {
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}

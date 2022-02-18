@@ -1,0 +1,17 @@
+/* couleur du thème */
+$--color-white: #fff;
+$--color-primary: #409eff;
+$--color-success: #67c23a;
+$--color-warning: #e6a23c;
+$--color-danger: #f56c6c;
+$--color-info: #909399;
+
+$--color-text-primary: #333333 !default;
+$--color-text-regular: #666666 !default;
+$--color-text-secondary: #888888 !default;
+$--color-text-placeholder: #bbbbbb !default;
+
+/* chemin vers le fichier de police, requis */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
