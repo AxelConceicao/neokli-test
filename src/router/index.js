@@ -20,7 +20,7 @@ const router = new VueRouter({
 
 router.afterEach(to => {
   Vue.nextTick(() => {
-    document.title = to.meta.title || 'Element UI Template'
+    document.title = to.meta.title || 'Klineo'
   })
 })
 
