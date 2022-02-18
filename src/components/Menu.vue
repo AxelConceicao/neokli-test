@@ -66,7 +66,6 @@ export default {
 <style lang="scss" scoped>
 @media screen and (max-width: 992px) {
   #side-menu {
-    width: 56px !important;
     .menu-item-container {
       justify-content: center !important;
       .menu-item {
@@ -82,7 +81,6 @@ export default {
   }
 }
 #side-menu {
-  width: 220px;
   min-height: 100vh;
   background: white;
   padding: 1.5rem 0;

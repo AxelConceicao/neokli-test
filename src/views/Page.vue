@@ -5,8 +5,25 @@
     </el-aside>
     <el-container>
       <el-header>
-        <el-row type="flex" align="middle">
-          {{ $route.name }}
+        <el-row class="is-full-width" type="flex" align="middle" justify="space-between">
+          <div>
+            <h1 class="header-title">
+              {{ $route.name }}
+            </h1>
+          </div>
+          <el-row type="flex" align="middle">
+            <el-badge is-dot class="bell">
+              <el-button type="text" @click="unavailableFeature()">
+                <i class="fal fa-bell"></i>
+              </el-button>
+            </el-badge>
+            <div class="user-info" @click="unavailableFeature()">
+              <el-row type="flex" align="middle">
+                <img class="user-avatar mr-4" src="@/assets/user.jpg" />
+                <span>John Doe</span>
+              </el-row>
+            </div>
+          </el-row>
         </el-row>
       </el-header>
       <el-main>
@@ -33,7 +50,7 @@ export default {
   mounted() {},
   methods: {
     ...mapMutations([]),
-    ...mapActions([]),
+    ...mapActions(['unavailableFeature']),
   },
 }
 </script>
@@ -47,5 +64,52 @@ export default {
 
 <style lang="scss">
 #page {
+  .el-aside {
+    width: 220px !important;
+    transition: all 0.25s ease;
+  }
+  @media screen and (max-width: 992px) {
+    .el-aside {
+      width: 3.5rem !important;
+    }
+  }
+  .el-header {
+    width: 100%;
+    height: 100px !important;
+    display: flex;
+    align-content: center;
+    padding: 2rem;
+    .header-title {
+      font-weight: 500;
+      color: var(--color-text-primary);
+    }
+    .bell {
+      .el-button {
+        padding: 0;
+        margin-top: -3px;
+        margin-right: -7px;
+      }
+      i {
+        transition: all 0.25s ease-in-out;
+        &:hover {
+          color: var(--color-primary);
+        }
+        font-size: 2rem;
+        color: var(--color-text-primary);
+      }
+    }
+    .user-avatar {
+      border-radius: 50%;
+      height: 3rem;
+    }
+    .user-info {
+      padding-left: 2.5rem;
+      cursor: pointer;
+      transition: all 0.25s ease-in-out;
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
 }
 </style>
