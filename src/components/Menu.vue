@@ -2,35 +2,36 @@
   <el-col id="side-menu">
     <div class="mb-6 is-full-width" @click="go('/')">
       <el-row type="flex" justify="center">
-        <img class="p-2 logo" alt="Logo" src="@/assets/neokli-logo.png" />
+        <img class="p-2 logo hidden-sm-and-down" alt="Logo" src="@/assets/neokli-logo.png" />
+        <img class="p-2 logo hidden-md-and-up" alt="Logo" src="@/assets/neokli-small-logo.png" />
       </el-row>
     </div>
     <div class="is-flex-grow-1">
-      <el-row type="flex" align="middle" v-for="(v, k) in menu" :key="k" class="px-4 mb-3">
-        <div class="menu-item p-3" :class="v.name === $route.name ? 'is-active' : ''" @click="go(v.path)">
-          <el-row type="flex" align="middle">
+      <el-row class="menu-item-container px-4 mb-3" type="flex" align="middle" v-for="(v, k) in menu" :key="k">
+        <div class="menu-item" :class="v.name === $route.name ? 'is-active' : ''" @click="go(v.path)">
+          <el-row class="menu-contents" type="flex" align="middle">
             <i :class="v.icon"></i>
-            <span>{{ v.name }}</span>
+            <span class="hidden-sm-and-down">{{ v.name }}</span>
           </el-row>
           <div class="shape"></div>
         </div>
       </el-row>
     </div>
     <div>
-      <el-row type="flex" align="middle" class="px-4 mb-3">
-        <div class="menu-item p-3" :class="'Paramètres' === $route.name ? 'is-active' : ''" @click="go('settings')">
-          <el-row type="flex" align="middle">
+      <el-row class="menu-item-container px-4 mb-3" type="flex" align="middle">
+        <div class="menu-item" :class="'Paramètres' === $route.name ? 'is-active' : ''" @click="go('settings')">
+          <el-row class="menu-contents" type="flex" align="middle">
             <i class="fal fa-cog"></i>
-            <span>Paramètres</span>
+            <span class="hidden-sm-and-down">Paramètres</span>
           </el-row>
           <div class="shape"></div>
         </div>
       </el-row>
-      <el-row type="flex" align="middle" class="px-4 mb-3">
-        <div class="menu-item p-3" @click="unavailableFeature()">
-          <el-row type="flex" align="middle">
+      <el-row class="menu-item-container px-4 mb-3" type="flex" align="middle">
+        <div class="menu-item" @click="unavailableFeature()">
+          <el-row class="menu-contents" type="flex" align="middle">
             <i class="fal fa-sign-out"></i>
-            <span>Déconnexion</span>
+            <span class="hidden-sm-and-down">Déconnexion</span>
           </el-row>
           <div class="shape"></div>
         </div>
@@ -63,17 +64,36 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media screen and (max-width: 992px) {
+  #side-menu {
+    width: 56px !important;
+    .menu-item-container {
+      justify-content: center !important;
+      .menu-item {
+        padding: 0.75rem 0 !important;
+        .menu-contents {
+          justify-content: center !important;
+          i {
+            position: relative !important;
+          }
+        }
+      }
+    }
+  }
+}
 #side-menu {
+  width: 220px;
   min-height: 100vh;
   background: white;
   padding: 1.5rem 0;
   display: flex;
   flex-direction: column;
+  transition: all 0.25s  ease;
 
   .logo {
     height: 30px;
     cursor: pointer;
-    transition: all 0.5s ease;
+    transition: all 0.5s  ease-in-out;
     &:hover {
       transform: scale(1.1);
     }
@@ -82,13 +102,15 @@ export default {
   .menu-item {
     color: var(--color-text-secondary);
     cursor: pointer;
+    padding: 0.75rem;
+    transition: all 0.25s ease-in-out;
+    .menu-contents {
+      min-height: 1rem;
+    }
     i,
     span {
-      -webkit-transition: all 0.25s ease;
-      -moz-transition: all 0.25s ease;
-      -ms-transition: all 0.25s ease;
-      -o-transition: all 0.25s ease;
-      transition: all 0.25s ease;
+      transition: all 0.25s  ease-in-out;
+      white-space: nowrap;
     }
     i {
       position: absolute;
