@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "id": "NCT01",
+      "specialite": "Gynécologie",
+      "organe": "Ovaire",
+      "situation": "Métastatique"
+    },
+    {
+      "id": "NCT02",
+      "specialite": "Gynécologie",
+      "organe": "Ovaire",
+      "situation": "Localisé"
+    },
+    {
+      "id": "NCT03",
+      "specialite": "Gynécologie",
+      "organe": "Sein",
+      "situation": "Métastatique"
+    },
+    {
+      "id": "NCT04",
+      "specialite": "Gynécologie",
+      "organe": "Sein",
+      "situation": "Localisé"
+    },
+    {
+      "id": "NCT05",
+      "specialite": "Gynécologie",
+      "organe": "Sein",
+      "situation": "Localisé"
+    },
+    {
+      "id": "NCT06",
+      "specialite": "Thoracique",
+      "organe": "Poumon",
+      "situation": "Métastatique"
+    },
+    {
+      "id": "NCT07",
+      "specialite": "Thoracique",
+      "organe": "Poumon",
+      "situation": "Localisé"
+    },
+    {
+      "id": "NCT08",
+      "specialite": "Thoracique",
+      "organe": "Plèvre",
+      "situation": "Métastatique"
+    },
+    {
+      "id": "NCT09",
+      "specialite": "Thoracique",
+      "organe": "Plèvre",
+      "situation": "Localisé"
+    },
+    {
+      "id": "NCT10",
+      "specialite": "Thoracique",
+      "organe": "Thymus",
+      "situation": "Métastatique"
+    }
+  ]
+}

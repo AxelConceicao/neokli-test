@@ -27,7 +27,7 @@
         </el-row>
       </el-header>
       <el-main>
-        <router-view />
+        <router-view class="component-container" />
       </el-main>
     </el-container>
   </el-container>
@@ -75,7 +75,7 @@ export default {
   }
   .el-header {
     width: 100%;
-    height: 100px !important;
+    height: 120px !important;
     display: flex;
     align-content: center;
     padding: 2rem;
@@ -86,7 +86,7 @@ export default {
     .bell {
       .el-button {
         padding: 0;
-        margin-top: -3px;
+        margin-top: -4px;
         margin-right: -7px;
       }
       i {
@@ -94,7 +94,7 @@ export default {
         &:hover {
           color: var(--color-primary);
         }
-        font-size: 2rem;
+        font-size: 1.75rem;
         color: var(--color-text-primary);
       }
     }
@@ -103,12 +103,24 @@ export default {
       height: 3rem;
     }
     .user-info {
-      padding-left: 2.5rem;
+      margin-left: 2.5rem;
       cursor: pointer;
       transition: all 0.25s ease-in-out;
       &:hover {
         color: var(--color-primary);
       }
+    }
+  }
+  .el-main {
+    // min-height: calc(100vh - 164px);
+    // min-height: 600px;
+    padding: 2rem;
+    padding-top: 0;
+    .component-container {
+      min-height: 600px;
+      padding: 2rem;
+      background: white;
+      border-radius: 20px;
     }
   }
 }
